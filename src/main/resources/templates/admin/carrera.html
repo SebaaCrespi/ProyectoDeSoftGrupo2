@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="backButton">
+            <a th:href="@{/admin/universidad/}+${carrera.universidad.idUniversidad}"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <h3 th:text="${carrera.nombre}"></h3>
+        <div class="optionTable">
+            <a th:href="@{/admin/alta/materia/} + ${carrera.idCarrera}">Agregar Materia</a>
+        </div>
+        <div class="listado">
+            <div th:each="materia : ${materias}">
+                    <h3 th:text="${materia.nombre}"></h3>
+                <a>Eliminar</a>
+                <a th:href ="@{/admin/materia/} + ${materia.idMateria}">Ver</a>
+                <!--th:text = "${carrera.idCarrera}"<a th:href="@{materia/listar/} + ${idCarrera}"></a>  -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

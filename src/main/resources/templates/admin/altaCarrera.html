@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+<title>Document</title>
+</head>
+<body>
+ <div class="contenedor">    
+        <div class="backButtonAlta">
+            <a th:href="@{/admin}"><i class="fas fa-arrow-left"></i></a>
+        </div>   
+        <div>
+            <form action="#" th:action="@{/admin/guardar/carrera/} + ${idUniversidad}" th:object="${carrera}" method="POST">
+                <div class="input">
+                    <input type="text" th:field="*{nombre}" placeholder="Nombre" required="required" />
+                </div>
+             	<button type="submit">Crear carrera</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

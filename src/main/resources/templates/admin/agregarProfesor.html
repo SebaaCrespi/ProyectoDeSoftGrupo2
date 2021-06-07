@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 th:text="*{materia.nombre}"></h2>
+        <div class="backButton">
+            <a th:href="@{/admin/materia/}+${materia.idMateria}"><i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+    <div class="profesores">
+        <form action="#" th:action="@{/admin/materia/agregarProfesor/} + ${materia.idMateria} " method="POST">
+            <select name="profesor">
+                <option th:each="profesor : ${profesoresList}" th:text="*{profesor.nombre} + *{profesor.apellido}" th:value="${profesor.idUsuario}"></option>
+            </select>
+            <button type="submit">Agregar Profesor</button>
+        </form>
+    </div>
+    <div>
+        <a th:href="@{/admin/alta/profesor/} + ${materia.idMateria}">Registrar Profesor</a>
+    </div>
+</body>
+</html>

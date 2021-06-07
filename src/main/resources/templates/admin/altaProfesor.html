@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="#" th:action="@{/admin/guardar/profesor}" th:object="${profesor}" method="POST">
+            <div>
+                <input type="text" placeholder="Nombre" th:field="*{nombre}" required="required">
+            </div> 
+            <div>
+                <input type="text" placeholder="Apellido" th:field="*{apellido}" required="required">
+            </div>
+            <div>
+                <input type="email" placeholder="Correo Electrónico" th:field="*{mail}" required="required">
+            </div>
+            <div>
+                <input type="text" placeholder="Nombre de Usuario" th:field="*{username}" required="required">
+            </div>
+            <div>
+                <input type="password" placeholder="Contraseña" th:field="*{password}" required="required">
+            </div>
+            <div>
+                <input type="hidden" th:value="${idMateria}" name="idMateria">
+            </div>
+            <div>
+                <select th:field="${profesor.perfil.idPerfil}">
+                    <option th:value="${perfil.idPerfil}"></option>
+                </select>
+            </div>
+            <button type="submit">Crear profesor</button>
+        </form>
+    </div>
+</body>
+</html>

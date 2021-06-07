@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">    
+        <div class="backButtonAlta">
+            <a th:href="@{/admin}"><i class="fas fa-arrow-left"></i></a>
+        </div>    
+        <div>
+            <form action="#" th:action="@{/admin/guardar/universidad}" th:object="${universidad}" enctype="multipart/form-data" method="POST">
+                <div class="input">
+                    <input type="text" th:field="*{nombre}" placeholder="Nombre" required="required" />
+                </div>
+                <div class="input">
+                    <label>Logo de la universidad:</label>
+                    <input type="file" name="file" id="file"/>
+                </div>
+                <button type="submit">Crear universidad</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

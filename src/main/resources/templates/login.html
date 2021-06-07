@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<div>
+			<form th:action="@{/login}" role="form" method="POST">
+				<div>
+					<input type="text" name="username" 
+						placeholder="Username" required="required" />
+				</div>
+				<div>
+					<input type="password" name="password"
+						placeholder="Password" required="required" />
+				</div>
+				<div th:if="${param.error}" class="alerta">Credenciales incorrectas.</div>
+				<button type="submit">Ingresar</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
