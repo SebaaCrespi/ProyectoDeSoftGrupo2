@@ -39,6 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(resources).permitAll()
 			.antMatchers("/").permitAll() //a este path puede ingresar cualquiera
 			.antMatchers("/admin/**").hasRole("ADMIN") 
+			.antMatchers("/user/**").hasRole("USER")
 			.anyRequest().authenticated() //Caulquier otra url tiene que estar autenticada
 		.and()
 			.formLogin() //form de login

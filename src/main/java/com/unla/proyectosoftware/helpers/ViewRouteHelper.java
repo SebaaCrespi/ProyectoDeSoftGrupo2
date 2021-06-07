@@ -2,11 +2,9 @@ package com.unla.proyectosoftware.helpers;
 
 public class ViewRouteHelper {
 
-	//USER
-	public static final String USER_INDEX = "user/index";
-
 	//HOME
 	public static final String HOME = "home";
+	
 	//REDIRECTS
 	public static final String HOME_ROOT = "/";
 
@@ -25,9 +23,12 @@ public class ViewRouteHelper {
 	public static final String ADMIN_MATERIA_AGREGAR_PROFESOR = "admin/AgregarProfesor";
 	public static final String ADMIN_ALTA_PROFESOR = "admin/altaProfesor";
 	
-
-
 	public static final String CARRERRA_NEW ="carrera/altaCarrera";
+	
+	//ESTUDIANTE
+	public static final String ESTUDIANTE_PANEL ="estudiante/panel";
+	public static final String ESTUDIANTE_CARRERA ="estudiante/carrera";
+	public static final String ESTUDIANTE_MATERIA ="estudiante/materia";
 	
 	//REDIRECT
 	public static final String ADMIN_ROOT = "/admin";

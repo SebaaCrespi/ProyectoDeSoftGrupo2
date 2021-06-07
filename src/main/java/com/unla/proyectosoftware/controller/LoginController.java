@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
-
-
-
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -37,10 +34,16 @@ public class LoginController {
 		String username= auth.getName();
 
 		UsuarioModel user = usuarioService.traerUsuarioYPerfil(username);
-
+		System.out.println(user.toString());
+		
 		if(user.getPerfil().getNombreRol().equals("ROLE_ADMIN")){
 			redirect.setUrl("/admin");
+		} if (user.getPerfil().getNombreRol().equals("ROLE_PROFESOR")) {
+			redirect.setUrl("/profesor");
+		} if (user.getPerfil().getNombreRol().equals("ROLE_ESTUDIANTE")) {
+			redirect.setUrl("/estudiante");
 		}
+		
 		return redirect;
 	}
 
