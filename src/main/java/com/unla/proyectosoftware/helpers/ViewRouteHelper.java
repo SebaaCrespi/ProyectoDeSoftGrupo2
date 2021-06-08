@@ -10,6 +10,9 @@ public class ViewRouteHelper {
 
 	//LOGIN
 	public static final String LOGIN = "/login";
+	
+	//REGISTAR
+	public static final String REGISTRO ="/registro";
 
 	//ADMIN
 	public static final String ADMIN_PANEL = "admin/panel";

@@ -1,14 +1,15 @@
 package com.unla.proyectosoftware.controller;
 
 import com.unla.proyectosoftware.helpers.ViewRouteHelper;
+import com.unla.proyectosoftware.models.UsuarioModel;
 import com.unla.proyectosoftware.services.IUniversidadService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
-
 
 @Controller
 public class HomeController {
@@ -23,4 +24,5 @@ public class HomeController {
         mV.addObject("universidades", universidadService.traerUniversidades());
         return mV;
 	}
-}
+}	
+

@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.unla.proyectosoftware.entities.Profesor;
 import com.unla.proyectosoftware.helpers.ViewRouteHelper;
 import com.unla.proyectosoftware.models.CarreraModel;
 import com.unla.proyectosoftware.models.MateriaModel;

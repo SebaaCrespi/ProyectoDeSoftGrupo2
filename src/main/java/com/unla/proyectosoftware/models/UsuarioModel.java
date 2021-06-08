@@ -59,6 +59,13 @@ public class UsuarioModel {
 	public void setPerfil(PerfilModel perfil) {
 		this.perfil = perfil;
 	}
+
+	@Override
+	public String toString() {
+		return "UsuarioModel [idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", mail="
+				+ mail + perfil;
+	}
+	
 	
 }
 
