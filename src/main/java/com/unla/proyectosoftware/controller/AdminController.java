@@ -92,7 +92,6 @@ public class AdminController {
             }catch(IOException e){
                 e.printStackTrace();
             }
-            
         }
         universidadService.insertOrUpdate(univ);
         return new RedirectView(ViewRouteHelper.ADMIN_ROOT);

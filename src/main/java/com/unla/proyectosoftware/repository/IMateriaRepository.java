@@ -16,6 +16,9 @@ public interface IMateriaRepository extends JpaRepository<Materia, Serializable>
     @Query("select m from Materia m inner join fetch m.carrera mc WHERE mc.idCarrera  = (:idCarrera)")
 	public List<Materia> findByIdCarrera(@Param ("idCarrera") int idCarrera);
 
+    @Query("SELECT m FROM Materia m JOIN FETCH m.profesores p WHERE p.idUsuario = (:idUsuario)")
+    public abstract List<Materia> findByIdUsuario(@Param ("idUsuario") int idUsuario);
+
     public List<Materia> findAll();   
     
     public Materia findByIdMateria(int idMateria);

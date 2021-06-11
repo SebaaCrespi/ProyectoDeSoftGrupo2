@@ -10,7 +10,7 @@ public class UsuarioModel {
 	
 	public UsuarioModel() {}
 
-	public UsuarioModel(int idUsuario, String username, String password, String mail,
+	public UsuarioModel(int idUsuario,String mail, String username, String password, 
 			PerfilModel perfil) {
 		super();
 		this.idUsuario = idUsuario;

@@ -12,4 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface IUniversidadRespository extends JpaRepository<Universidad, Serializable> {
       
     public List<Universidad> findAll();
+
+    public Universidad findByNombre(String nombre);
 }

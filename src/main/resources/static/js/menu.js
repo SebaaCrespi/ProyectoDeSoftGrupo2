@@ -14,3 +14,14 @@ window.addEventListener('click', e=>{
         menu.classList.toggle("spread")
     }
 })
+
+$.ajax({method: "GET",url:"/univerisdad/buscar/"})
+    .done((response)=>{
+
+    })
+    .fail(()=>{
+
+    })
+    .always(()=>{
+
+    });

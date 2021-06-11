@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <title>Library</title>
+</head>
+<body>
+    <div class="container">
+    <h1 th:text="${profesor.nombre}"> <span th:text="${profesor.apellido}"></span></h1>
+    <div th:each="materia : ${materias}">
+        <a th:text="${materia.nombre}" th:href="@{/profesor/materia/}+${materia.idMateria}"></a>
+    </div>
+    </div>
+</body>
+</html>

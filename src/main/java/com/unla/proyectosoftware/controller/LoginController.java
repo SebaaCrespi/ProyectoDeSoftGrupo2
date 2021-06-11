@@ -49,7 +49,7 @@ public class LoginController {
 		PerfilModel perfil = perfilService.traerPorNombre("ROLE_ESTUDIANTE");
 		usuario.setPerfil(perfil);
 		usuarioService.insertOrUpdate(usuario);
-		return new RedirectView("/login/registro");
+		return new RedirectView("/login");
 	}
 	 
 	@GetMapping("/success")
@@ -63,7 +63,7 @@ public class LoginController {
 		if(user.getPerfil().getNombreRol().equals("ROLE_ADMIN")){
 			redirect.setUrl("/admin");
 		} if (user.getPerfil().getNombreRol().equals("ROLE_PROFESOR")) {
-			redirect.setUrl("/profesor");
+			redirect.setUrl("/profesor/"+user.getIdUsuario());
 		} if (user.getPerfil().getNombreRol().equals("ROLE_ESTUDIANTE")) {
 			redirect.setUrl("/estudiante");
 		}

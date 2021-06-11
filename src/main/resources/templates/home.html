@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNLa Library</title>
+    <title>Library</title>
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- importo Boxicons para los iconos -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- importo el css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
     <header class="header" id="inicio">
@@ -23,7 +25,7 @@
         <!-- pantalla de inicio -->
         <div class="contenedor head">
                <h1 class="titulo">Te ayudamos a estudiar</h1>
-            <p>UNLa Library busca compilar todo el material de estudio de tu carrera</p>
+            <p>Library busca compilar todo el material de estudio de tu carrera</p>
         </div>
     </header>
     <main>
@@ -61,9 +63,22 @@
         <section class="galery" id="portafolio">
             <div class="contenedor">
                 <h2 class="subtitulo">Universidades</h2>
+
+                <div class="busqueda">
+                    <form action="#" th:action="@{/universidad/buscar/}" method="POST">
+                        <input type="text" placeholder="Nombre de la universidad..." required="required" name="busqueda">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
                 <div class="contenedor-galeria">
-                    <div th:each="universidad:${universidades}">
-                        <a th:href="@{/admin/modificar/universidad/}+${universidad.idUniversidad}">
+                    <div th:if="${universidades} != null" th:each="universidad:${universidades}">
+                        <a th:href="@{/universidad/}+${universidad.idUniversidad}">
+                            <h3 th:text="${universidad.nombre}"></h3>
+                            <img th:src="@{'/Universidades/'} + ${universidad.logo}" width="200px" height="200px">
+                        </a>
+                    </div>
+                    <div  th:if="${universidad} != null">
+                        <a th:href="@{/universidad/}+${universidad.idUniversidad}">
                             <h3 th:text="${universidad.nombre}"></h3>
                             <img th:src="@{'/Universidades/'} + ${universidad.logo}" width="200px" height="200px">
                         </a>
@@ -98,7 +113,7 @@
         </div>
     </footer>-->
     <!-- enlaso con el javascript -->
-    <script src="js/menu.js"></script>
+    <script src="js/menu.js" ></script>
     <!-- este scrip hace funcionar a la "X" -->
     <script src="js/lightbox.js"></script>
 </body>

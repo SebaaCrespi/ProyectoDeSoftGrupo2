@@ -41,4 +41,8 @@ public class UniversidadService implements IUniversidadService{
 		UniversidadModel aux = universidadConverter.entityToModel(universidadRepository.getById(id));
 		return aux;
 	}
+
+    public UniversidadModel traerUniversidadPorNombre(String busqueda){
+        return universidadConverter.entityToModel(universidadRepository.findByNombre(busqueda));
+    }
 }
