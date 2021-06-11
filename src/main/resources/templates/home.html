@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNLa Library</title>
+    <title>Library</title>
     <!-- importo Boxicons para los iconos -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- importo el css -->
@@ -15,15 +15,16 @@
         <!-- inserto el menu -->
         <img src="img/hamburguesa.svg" alt="" class="hamburguesa">
         <nav class="menu-navegacion">
-            <a href="#inicio">inicio</a>
-            <a href="#servicio">Acerca de</a>
-            <a href="#portafolio">Carreras</a>
+            <a href="#inicio">Inicio</a>        
+            <a href="#universidades">Universidades</a>
+             <a href="#nosotros">Acerca de</a>
             <a th:href="@{/login}">Login</a>
         </nav>
         <!-- pantalla de inicio -->
         <div class="contenedor head">
-               <h1 class="titulo">Te ayudamos a estudiar</h1>
-            <p>UNLa Library busca compilar todo el material de estudio de tu carrera</p>
+        <h1 class="titulo">Library</h1>
+               <h2>Bienvenidos a nuestra biblioteca digital!!!</h2>
+         
         </div>
     </header>
     <main>
@@ -57,8 +58,7 @@
         <seccion class="service contenedor" id="servicio">
 
         </seccion>
-        <!-- seccion de la galeria -->
-        <section class="galery" id="portafolio">
+        <section class="galery" id="universidades">
             <div class="contenedor">
                 <h2 class="subtitulo">Universidades</h2>
                 <div class="contenedor-galeria">
@@ -70,33 +70,64 @@
                     </div>
                 </div>
             </div>
+             <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Universidad Nacional de Lanús</a></h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Universidad Nacional de Quilmes</a></h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Universidad Nacional de Lomas de Zamora</h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">4</span>Universidad Nacional de Avellaneda</a></h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">5</span>Universidad Nacional de La Matanza</a></h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">6</span>Universidad Nacional de Luján</h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">7</span>Universidad Tecnológica Nacional</h3>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">8</span>Universidad de Buenos Aires</a></h3>
+                    </div> 
         </section>
-        <!-- lightbox o ventana flotante 
-        <section class="imagen-light">
-            <img src="img/close.svg" alt="" class="close">
-            <img src="img/sistemas_intento1.jpg" alt="" class="agregar-imagen">
-        </section>
-        <seccion class="contenedor" id="expertos">
-            <h2 class="subtitulo">Formulario de Consulta</h2>
-            <seccion class="experts">
-                <div class="cont-expert">
-
+        
+                
+    <section class="services contenedor" id="nosotros">
+            <h2 class="subtitulo">Acerca de</h2>
+            <div class="contenedor-servicio">
+                <img src="img/leer.jpg" alt="">
+                <div class="checklist-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Universidades</h3>
+                        <p> En nuestra página podrás encontrar un listado con las distintas Universidades de Argentina, para que encuentres lo que estas buscando!.</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Materias</h3>
+                        <p> Podrás visualizar las distintas materias de cada una de las carreras.</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Archivos</h3>
+                        <p> Podrás encontrar en la sección de la materia que búsques todos los archivos para visualizar y descargar..</p>
+                    </div>
                 </div>
-            </seccion>
-        </seccion>
-    </main>
-    <footer id="contacto">
-        <div class="contenedor footer-content">
-            <div class="contact-us">
-                <h2 class="brand">Contacto</h2>
-                <p>Juan Manuel - Asistete de la UNLa - 11-1111-1111</p>
             </div>
+        </section>     
+           
+    </main>
+    
+      <footer>
+        <div class="contenedor-footer">
+            <h2 class="titulo-final">PROYECTO DE SOFTWARE</h2>
         </div>
-        <div class="line"></div>
-        <div class="contenedor no_relacion">
-            <p>UNLA Library no forma parte de la UNLa. El contacto es directamente con la Universidad. Pagina sin fines de lucro.</p>
-        </div>
-    </footer>-->
+        <h2 class="titulo-final">&copy; Grupo 02 | 2021</h2>
+    </footer> 
+    
+   
     <!-- enlaso con el javascript -->
     <script src="js/menu.js"></script>
     <!-- este scrip hace funcionar a la "X" -->
