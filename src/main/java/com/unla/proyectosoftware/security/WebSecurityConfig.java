@@ -37,7 +37,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests() 
 			.antMatchers(resources).permitAll()
-			.antMatchers("/").permitAll() //a este path puede ingresar cualquiera
+			.antMatchers("/").permitAll()
+			.antMatchers("/universidad/**").permitAll() 
+			.antMatchers("/Contenido/**").permitAll()
+			.antMatchers("/login/**").permitAll()
+			.antMatchers("/registro/**").permitAll()
 			.antMatchers("/admin/**").hasRole("ADMIN") 
 			.anyRequest().authenticated() //Caulquier otra url tiene que estar autenticada
 		.and()

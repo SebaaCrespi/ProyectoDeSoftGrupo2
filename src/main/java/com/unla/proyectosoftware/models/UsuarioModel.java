@@ -10,7 +10,7 @@ public class UsuarioModel {
 	
 	public UsuarioModel() {}
 
-	public UsuarioModel(int idUsuario, String username, String password, String mail,
+	public UsuarioModel(int idUsuario,String mail, String username, String password, 
 			PerfilModel perfil) {
 		super();
 		this.idUsuario = idUsuario;
@@ -59,6 +59,13 @@ public class UsuarioModel {
 	public void setPerfil(PerfilModel perfil) {
 		this.perfil = perfil;
 	}
+
+	@Override
+	public String toString() {
+		return "UsuarioModel [idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", mail="
+				+ mail + perfil;
+	}
+	
 	
 }
 

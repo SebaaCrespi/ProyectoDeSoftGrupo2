@@ -10,20 +10,21 @@
 <body>
     <div class="container">
         <div class="backButton">
-            <a th:href="@{/admin}"><i class="fas fa-arrow-left"></i></a>
+            <a th:href="@{/}"><i class="fas fa-arrow-left"></i></a>
         </div>
-        <h3 th:text="${universidad.nombre}"></h3>
-        <div class="optionTable">
-            <a th:href="@{/admin/alta/carrera/} + ${universidad.idUniversidad}">Agregar Carrera</a>
-        </div>
+        <div class="container">
+            <div>
+                <h2 th:text="${universidad.nombre}"></h2>
+            </div>
         <div class="listado">
-            <div th:each="carrera : ${carreras}">
+            <div th:each="carrera:${carreras}">
+                <a th:href="@{/universidad/}+${universidad.idUniversidad}+@{/carrera/}+${carrera.idCarrera}">
                     <h3 th:text="${carrera.nombre}"></h3>
-                <a>Eliminar</a>
-                <a th:href ="@{/admin/carrera/} + ${carrera.idCarrera}">Ver</a>
-                <!--th:text = "${carrera.idCarrera}"<a th:href="@{materia/listar/} + ${idCarrera}"></a>  -->
+                </a>
             </div>
         </div>
+    </div>
+      
     </div>
 </body>
 </html>

@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.unla.proyectosoftware.entities.Profesor;
 import com.unla.proyectosoftware.helpers.ViewRouteHelper;
 import com.unla.proyectosoftware.models.CarreraModel;
 import com.unla.proyectosoftware.models.MateriaModel;
@@ -93,7 +92,6 @@ public class AdminController {
             }catch(IOException e){
                 e.printStackTrace();
             }
-            
         }
         universidadService.insertOrUpdate(univ);
         return new RedirectView(ViewRouteHelper.ADMIN_ROOT);

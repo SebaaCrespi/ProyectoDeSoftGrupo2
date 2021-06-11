@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="css/style_login_registro.css">
+    <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
-	<div>
-		<div>
-			<form th:action="@{/login}" role="form" method="POST">
-				<div>
-					<input type="text" name="username" 
-						placeholder="Username" required="required" />
-				</div>
-				<div>
-					<input type="password" name="password"
-						placeholder="Password" required="required" />
-				</div>
-				<div th:if="${param.error}" class="alerta">Credenciales incorrectas.</div>
-				<button type="submit">Ingresar</button>
-			</form>
-		</div>
-	</div>
-
+    <!-- <i class="fas fa-home  hamburguesa"><a href="index.html"></a></i> -->
+    <form th:action="@{/login}" role="form" method="POST" class="formulario-login">
+        <h1>Log in</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <!-- logo de mail -->
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" name="username" placeholder="Username" required="required" />
+            </div>
+            <div class="input-contenedor">
+                <!-- logo de llave -->
+                <i class="fas fa-key icon"></i>
+                <input type="password" name="password" placeholder="Password" required="required" />
+            </div>
+            <div th:if="${param.error}" class="alerta">Credenciales incorrectas.</div>
+            <input type="submit" value="Login" class="button">
+            <p>Al registrarte aceptas las condiciones de uso</p>
+            <p>No tienes una cuenta? <a th:href="@{/login/registro}"class="link">Registrate</a></p>
+        </div>
+    </form>
 </body>
 </html>

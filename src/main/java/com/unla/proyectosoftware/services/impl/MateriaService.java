@@ -47,4 +47,12 @@ public class MateriaService implements IMateriaService{
 		}
 		return aux;
     }
+
+    public List<MateriaModel> traerPorProfesor(int idUsuario){
+        List<MateriaModel> aux = new ArrayList<>();
+		for (Materia m : materiaRepository.findByIdUsuario(idUsuario)) {
+			aux.add(materiaConverter.entityToModel(m));
+		}
+        return aux;
+    }
 }

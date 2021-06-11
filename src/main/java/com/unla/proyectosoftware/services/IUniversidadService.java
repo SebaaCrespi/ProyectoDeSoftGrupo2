@@ -12,4 +12,6 @@ public interface IUniversidadService {
     public UniversidadModel findByIdUniversidad(int id);
 
     public void insertOrUpdate(UniversidadModel univ);
+
+    public UniversidadModel traerUniversidadPorNombre(String busqueda);
 }

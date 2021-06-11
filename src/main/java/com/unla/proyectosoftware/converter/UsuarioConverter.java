@@ -18,9 +18,9 @@ public class UsuarioConverter {
 		UsuarioModel userModel = null;
 		if(user != null){
 			userModel = new UsuarioModel(user.getIdUsuario(),
+										user.getMail(),
 										user.getUsername(),
 										user.getPassword(),
-										user.getMail(),
 										perfilConverter.entityToModel(user.getPerfil())
 										);
 		}
@@ -30,9 +30,9 @@ public class UsuarioConverter {
 	
 	public Usuario modelToEntity(UsuarioModel userModel) {
 		return new Usuario(userModel.getIdUsuario(),
+							userModel.getMail(),					
 							userModel.getUsername(),
 							userModel.getPassword(),
-							userModel.getMail(),
 							perfilConverter.modeltoEntity(userModel.getPerfil())
 							);
 	}

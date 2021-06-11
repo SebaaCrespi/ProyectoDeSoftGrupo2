@@ -21,5 +21,4 @@ public interface IProfesorRepository extends JpaRepository<Profesor,Serializable
 
     public Profesor findByIdUsuario(int idUsuario);
 
-
 }
