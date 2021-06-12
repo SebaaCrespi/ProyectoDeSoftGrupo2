@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar universidad</title>
+    <link href="../static/css/admin/style_agregar_universidad.css" th:href="@{/css/admin/style_agregar_universidad.css}" rel="stylesheet" >
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
-    <title>Library</title>
 </head>
 <body>
-    <div class="contenedor">    
-        <div class="backButtonAlta">
-            <a th:href="@{/admin}"><i class="fas fa-arrow-left"></i></a>
-        </div>    
-        <div>
-            <form action="#" th:action="@{/admin/guardar/universidad}" th:object="${universidad}" enctype="multipart/form-data" method="POST">
-                <div class="input">
-                    <input type="text" th:field="*{nombre}" placeholder="Nombre" required="required" />
-                </div>
-                <div class="input">
-                    <label>Logo de la universidad:</label>
-                    <input type="file" name="file" id="file"/>
-                </div>
-                <button type="submit">Crear universidad</button>
-            </form>
+    <a th:href="@{/admin}"><i class="fas fa-arrow-left"></i></a>
+    
+    <form action="#" th:action="@{/admin/guardar/universidad}" th:object="${universidad}" 
+    	enctype="multipart/form-data" method="POST" class="formulario-login">
+        <h1>Agregar Universidad</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <img src="../static/image/library-regular-24.png" alt="" srcset="" class="imagen">
+                <input type="text" th:field="*{nombre}" placeholder="Nombre" required="required" />
+            </div>
+            <div class="input">
+                <label>Logo de la universidad:</label>
+                <input type="file" name="file" id="file"/>
+            </div>
+            <input type="submit" value="Agregar" class="button">
         </div>
-    </div>
+    </form>
 </body>
 </html>

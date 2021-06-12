@@ -93,8 +93,5 @@ public class HomeController {
 		mV.addObject("contenidos", contenidoService.traerPorIdMateria(idMateria));
         return mV;
     }
-
-	
-	
 }	
 

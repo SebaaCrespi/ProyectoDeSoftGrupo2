@@ -18,18 +18,17 @@ public class ViewRouteHelper {
 	public static final String REGISTRO ="/registro";
 
 	//ADMIN
-	public static final String ADMIN_PANEL = "admin/panel";
-	public static final String ADMIN_ALTA_UNIV = "admin/altaUniv";
+	public static final String ADMIN_PANEL = "admin/panel"; //estilo
+	public static final String ADMIN_ALTA_UNIV = "admin/altaUniv"; //estilo
 	public static final String ADMIN_MODIFICAR_UNIV = "admin/modUniv";
-	public static final String ADMIN_MOSTRAR_UNIV = "admin/universidad";
-	public static final String ADMIN_ALTA_CARRERA = "admin/altaCarrera";
-	public static final String ADMIN_MOSTRAR_CARRERA = "admin/carrera";
-	public static final String ADMIN_ALTA_MATERIA = "admin/altaMateria";
+	public static final String ADMIN_MOSTRAR_UNIV = "admin/universidad";//estilo
+	public static final String ADMIN_ALTA_CARRERA = "admin/altaCarreraPrueba";
+	public static final String ADMIN_MOSTRAR_CARRERA = "admin/carrera"; //estilo
+	public static final String ADMIN_ALTA_MATERIA = "admin/altaMateria"; //estilo
 	public static final String ADMIN_MOSTRAR_MATERIA = "admin/materia";
 	public static final String ADMIN_MATERIA_AGREGAR_PROFESOR = "admin/AgregarProfesor";
-	public static final String ADMIN_ALTA_PROFESOR = "admin/altaProfesor";
-	
-	public static final String CARRERRA_NEW ="carrera/altaCarrera";
+	public static final String ADMIN_ALTA_PROFESOR = "admin/altaProfesor"; //estilo
+	public static final String CARRERRA_NEW ="carrera/altaCarrera"; //estilo
 	
 	//PROFESOR
 	public static final String PROFESOR_PANEL ="profesor/panel";

@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import com.unla.proyectosoftware.helpers.ViewRouteHelper;
 import com.unla.proyectosoftware.models.CarreraModel;
 import com.unla.proyectosoftware.models.MateriaModel;
+import com.unla.proyectosoftware.models.PerfilModel;
 import com.unla.proyectosoftware.models.ProfesorModel;
 import com.unla.proyectosoftware.models.UniversidadModel;
 import com.unla.proyectosoftware.services.ICarreraService;
@@ -195,13 +196,15 @@ public class AdminController {
     public ModelAndView altaProfesor(){
         ModelAndView mV = new ModelAndView(ViewRouteHelper.ADMIN_ALTA_PROFESOR);
         mV.addObject("profesor", new ProfesorModel());
-        mV.addObject("perfil", perfilService.traerPorNombre("ROLE_PROFESOR"));
+//      mV.addObject("perfil", perfilService.traerPorNombre("ROLE_PROFESOR"));
         return mV;
     }
 
     @PostMapping("/guardar/profesor")
     public RedirectView guardarProfesor(@ModelAttribute("profesor") ProfesorModel profesor,
                                         @RequestParam (required = true) int idMateria){
+    	PerfilModel perfilModel = perfilService.traerPorNombre("ROLE_PROFESOR");
+    	profesor.setPerfil(perfilModel);
         profesorService.insertOrUpdate(profesor);
         return new RedirectView("/admin/materia/agregarProfesor/"+idMateria);
     }
