@@ -35,9 +35,10 @@ body{
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background: url("../img/bliblioteca-inicio.jpg") no-repeat center;
+/*	background: url("../img/bliblioteca-inicio.jpg") no-repeat center;*/
+	background: linear-gradient(to top, rgba(161, 140, 209, 0.4) 0%, rgba(251, 194, 235, 0.4) 100%), url(../img/bliblioteca-inicio.jpg)  no-repeat center;
 	background-size: cover;
-	filter: blur(5px);
+	filter: blur(3px);
 	z-index: -1;
 }
 .contact-box{
