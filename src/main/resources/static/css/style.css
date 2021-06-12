@@ -122,6 +122,10 @@ header{
     color: #9f8ad0;
 }
 
+.n-service+p{
+    color: #9f8ad0;
+}
+
 .number{
     display: inline-block;
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
