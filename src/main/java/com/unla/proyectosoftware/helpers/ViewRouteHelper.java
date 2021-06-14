@@ -12,10 +12,10 @@ public class ViewRouteHelper {
 	public static final String HOME_ROOT = "/";
 
 	//LOGIN
-	public static final String LOGIN = "/login";
+	public static final String LOGIN = "/login"; //estilo
 	
 	//REGISTAR
-	public static final String REGISTRO ="/registro";
+	public static final String REGISTRO ="/registro"; //estilo
 
 	//ADMIN
 	public static final String ADMIN_PANEL = "admin/panel"; //estilo
@@ -26,7 +26,7 @@ public class ViewRouteHelper {
 	public static final String ADMIN_MOSTRAR_CARRERA = "admin/carrera"; //estilo
 	public static final String ADMIN_ALTA_MATERIA = "admin/altaMateria"; //estilo
 	public static final String ADMIN_MOSTRAR_MATERIA = "admin/materia";
-	public static final String ADMIN_MATERIA_AGREGAR_PROFESOR = "admin/AgregarProfesor";
+	public static final String ADMIN_MATERIA_AGREGAR_PROFESOR = "admin/AgregarProfesor"; //estilo
 	public static final String ADMIN_ALTA_PROFESOR = "admin/altaProfesor"; //estilo
 	public static final String CARRERRA_NEW ="carrera/altaCarrera"; //estilo
 	

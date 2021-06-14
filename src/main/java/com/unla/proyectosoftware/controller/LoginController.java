@@ -65,7 +65,7 @@ public class LoginController {
 		} if (user.getPerfil().getNombreRol().equals("ROLE_PROFESOR")) {
 			redirect.setUrl("/profesor/"+user.getIdUsuario());
 		} if (user.getPerfil().getNombreRol().equals("ROLE_ESTUDIANTE")) {
-			redirect.setUrl("/estudiante");
+			redirect.setUrl("/");
 		}
 		
 		return redirect;
