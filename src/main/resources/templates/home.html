@@ -7,14 +7,11 @@
     <title>Library</title>
     <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- importo Boxicons para los iconos -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <!-- importo el css -->
     <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
     <header class="header" id="inicio">
-        <!-- inserto el menu -->
         <img src="img/hamburguesa.svg" alt="" class="hamburguesa">
         <nav class="menu-navegacion">
             <a href="#inicio">inicio</a>
@@ -22,44 +19,15 @@
             <a href="#portafolio">Carreras</a>
             <a th:href="@{/login}">Login</a>
         </nav>
-        <!-- pantalla de inicio -->
         <div class="contenedor head">
                <h1 class="titulo">Te ayudamos a estudiar</h1>
             <p>Library busca compilar todo el material de estudio de tu carrera</p>
         </div>
     </header>
     <main>
-        <!--
+  
         <seccion class="service contenedor" id="servicio">
-            <h2 class="subtitulo">Acerca de </h2>
-            <div class="contenedor-servicio">
-                <img src="img/nuestro_servicio.jpg" alt="">
-                <div class="checklist-servicio">
-                    <div class="service">
-                        <h3 class="n-service">
-                            <span class="number">1</span>Apuntes
-                            <p>Nuestros apuntes son todos subidos por los docentes, el material que encontraras es la ultima actualizacion y podras dejar un comentario sobre estos. </p>
-                        </h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service">
-                            <span class="number">2</span>Docentes
-                            <p>Todos los docentes que estan aqui se encuentran habilitados por la Universidad Nacional de Lanus, ellos son los responsables de todo el material que se encuentra aqui presente. </p>
-                        </h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service">
-                            <span class="number">3</span>Alumnos
-                            <p>Nuestra intencion es crear una comunidad universitaria, que los estudiantes tengan lugar a expresar su opinion sobre el material de estudio.</p>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </seccion>-->
-        <seccion class="service contenedor" id="servicio">
-
         </seccion>
-        <!-- seccion de la galeria -->
         <section class="galery" id="portafolio">
             <div class="contenedor">
                 <h2 class="subtitulo">Universidades</h2>
@@ -86,35 +54,9 @@
                 </div>
             </div>
         </section>
-        <!-- lightbox o ventana flotante 
-        <section class="imagen-light">
-            <img src="img/close.svg" alt="" class="close">
-            <img src="img/sistemas_intento1.jpg" alt="" class="agregar-imagen">
-        </section>
-        <seccion class="contenedor" id="expertos">
-            <h2 class="subtitulo">Formulario de Consulta</h2>
-            <seccion class="experts">
-                <div class="cont-expert">
-
-                </div>
-            </seccion>
-        </seccion>
-    </main>
-    <footer id="contacto">
-        <div class="contenedor footer-content">
-            <div class="contact-us">
-                <h2 class="brand">Contacto</h2>
-                <p>Juan Manuel - Asistete de la UNLa - 11-1111-1111</p>
-            </div>
-        </div>
-        <div class="line"></div>
-        <div class="contenedor no_relacion">
-            <p>UNLA Library no forma parte de la UNLa. El contacto es directamente con la Universidad. Pagina sin fines de lucro.</p>
-        </div>
-    </footer>-->
-    <!-- enlaso con el javascript -->
+       
     <script src="js/menu.js" ></script>
-    <!-- este scrip hace funcionar a la "X" -->
+   
     <script src="js/lightbox.js"></script>
 </body>
 </html>
