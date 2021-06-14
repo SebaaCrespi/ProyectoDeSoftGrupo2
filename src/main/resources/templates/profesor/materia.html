@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <link href="../static/css/contenido.css" th:href="@{/css/contenido.css}" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
-    <h1>CONTENIDO DE LA MATERIA</h1>
-    <a th:href="@{/profesor/materia/agregarArchivo/}+${materia.idMateria}">Agregar archivo</a>
-    <a th:href="@{/profesor/materia/agregarVideo/}+${materia.idMateria}">Agregar video</a>
+    <a th:href="@{/profesor/}+${idUsuario}"><i class="fas fa-arrow-left"></i></a>
+    <h1 th:text="${materia.nombre}"></h1>
+    <div class="agregarContenido">
+        <a th:href="@{/profesor/}+${idUsuario}+@{/materia/}+${materia.idMateria}+@{/agregarArchivo}">Agregar archivo</a>
+        <a th:href="@{/profesor/}+${idUsuario}+@{/materia/}+${materia.idMateria}+@{/agregarVideo}">Agregar video</a>
+    </div>
     <div class="contenido">
         <div th:each="contenido : ${contenidos}">
-            <a th:if="${contenido.archivo}" th:href="@{'/Contenido/'} + ${contenido.nombre}" th:text="${contenido.titulo}" target="_blank"></a>
-            <a th:if="!${contenido.archivo}" th:href="@{${contenido.nombre}}" th:text="${contenido.titulo}" target="_blank"></a>
-            <a th:href="@{/profesor/materia/eliminarContenido/}+${materia.idMateria}+@{/}+${contenido.idContenido}">Eliminar</a>
+            <div class="contenidoItem">
+                <a th:if="${contenido.archivo}" th:href="@{'/Contenido/'} + ${contenido.nombre}" th:text="${contenido.titulo}" target="_blank"></a>
+                <a th:if="!${contenido.archivo}" th:href="@{${contenido.nombre}}" th:text="${contenido.titulo}" target="_blank"></a>
+                <a th:href="@{/profesor/}+${idUsuario}+@{/materia/}+${materia.idMateria}+@{/eliminarContenido/}+${contenido.idContenido}" class="delete"><i class="fas fa-trash"></i></a>
+            </div>
+
+           
         </div>
     </div>
 </body>

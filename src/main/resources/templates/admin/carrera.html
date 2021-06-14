@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="../static/css/admin/style_carrera.css" th:href="@{/css/admin/style_carrera.css}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="../static/css/admin/style_universidad.css" th:href="@{/css/admin/style_universidad.css}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-	 <div class="backButton">
-            <a th:href="@{/admin/universidad/}+${carrera.universidad.idUniversidad}"><i class="fas fa-arrow-left"></i></a>
-     </div>
-    
+    <a th:href="@{/admin/universidad/}+${carrera.universidad.idUniversidad}"><i class="fas fa-arrow-left"></i></a>    
     <h3 th:text="${carrera.nombre}" class="titulo"></h3>
-    <a th:href="@{/admin/alta/materia/} + ${carrera.idCarrera}" class="agregar-materia"><i class='bx bxs-plus-square'></i></a>
+    <a th:href="@{/admin/alta/materia/} + ${carrera.idCarrera}" class="agregar"><i class="fas fa-plus-square"></i></a>
     
     <div class="container">
        <div th:each="materia: ${materias}" class="matereria">

@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <link href="../static/css/admin/style_agregar_universidad.css" th:href="@{/css/admin/style_agregar_universidad.css}" rel="stylesheet" >
     <title>Library</title>
 </head>
 <body>
-    <h1>Agregar archivo</h1>
-    <form action="#" th:action="@{/profesor/materia/agregarArchivo/guardar/}+${idMateria}" th:object="${contenido}" enctype="multipart/form-data" method="POST">
-        <input type="text" th:field="*{titulo}" placeholder="Titulo">
-        <label>Archivo:</label>
-        <input type="file" name="file" id="file"/>
-        <button type="submit">Subir archivo</button>
+    <a th:href="@{/profesor/}+${idProfesor}+@{/materia/}+${idMateria}"><i class="fas fa-arrow-left"></i></a>
+    <form class="formulario-login" action="#" th:action="@{/profesor/}+${idProfesor}+@{/materia/}+${idMateria}+@{/agregarArchivo/guardar}" th:object="${contenido}" enctype="multipart/form-data" method="POST">
+        <h1>Agregar archivo</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <input type="text" th:field="*{titulo}" placeholder="Titulo">
+            </div>
+            <div class="input">
+                <label>Archivo:</label>
+                <input type="file" name="file" id="file"/>
+            </div>
+            <button type="submit" class="button">Subir archivo</button>
+        </div>
     </form>
 </body>
 </html>

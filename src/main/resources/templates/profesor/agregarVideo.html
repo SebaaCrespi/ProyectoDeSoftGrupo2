@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <link href="../static/css/admin/style_agregar_universidad.css" th:href="@{/css/admin/style_agregar_universidad.css}" rel="stylesheet" >
     <title>Library</title>
 </head>
 <body>
-    <h1>Agregar video</h1>
-    <form action="#" th:action="@{/profesor/materia/agregarVideo/guardar/}+${idMateria}" th:object="${contenido}" method="POST">
-        <input type="text" th:field="*{titulo}" placeholder="Titulo" required = "required">
-        <input type="text" th:field="*{nombre}" placeholder="Url del video" required = "required"/>
-        <button type="submit">Agregar</button>
+    <a th:href="@{/profesor/}+${idProfesor}+@{/materia/}+${idMateria}"><i class="fas fa-arrow-left"></i></a>
+    <form class="formulario-login" action="#" th:action="@{/profesor/}+${idProfesor}+@{/materia/}+${idMateria}+@{/agregarVideo/guardar}" th:object="${contenido}" method="POST">
+        <h1>Agregar video</h1>
+        <div class="input-contenedor">
+            <input type="text" th:field="*{titulo}" placeholder="Titulo" required = "required">
+        </div>
+        <div class="input-contenedor">
+            <input type="text" th:field="*{nombre}" placeholder="Url del video" required = "required"/>
+        </div>
+        <button type="submit" class="button">Agregar</button>
     </form>
 </body>
 </html>

@@ -30,7 +30,8 @@ body{
     margin-left: 200px;
     padding: 3px;
 }
-.formulario-login h1{
+
+h1{
     text-align: center;
     color: #1a2537;
     font-size: 40px;
@@ -63,6 +64,7 @@ input[type="text"], input[type="password"]{
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .button:hover{
@@ -89,9 +91,4 @@ p{
     vertical-align: auto;
     margin-left: 5px;
     margin-top: 3px;
-}
-
-.input{
-    padding-top: 5px;
-    padding-bottom: 15px;
 }

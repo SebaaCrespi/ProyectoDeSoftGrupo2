@@ -28,6 +28,7 @@ body{
     transition: all 300ms;
     position: relative;
     max-width: 300px;
+    padding: 1.4vw;
 }
 
 .item::after{
@@ -44,17 +45,18 @@ body{
 }
 
 .item-text{
-    padding: 1em;
+    padding-top: 1em;
     text-align: center;
+}
+.item-text a{
+    text-decoration: none;
+    color:#1a2537;
 }
 
 .item-img{
     width: 170px;
     display: block;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 .titulo{
@@ -66,11 +68,13 @@ body{
     font-family: 'Hammersmith One', sans-serif;
 }
 
-.new-university{
-    text-align: center;
-    padding-top: 40px;
-    padding-top: 10px;
-    size: 10px;
-    padding-left: 950px;
-    color: black;
+.agregar{
+    display: flex;
+    margin: 0 auto;
+    width: 2%;
+    justify-content: space-evenly;
+}
+.agregar i{
+    color: #1a2537;
+    font-size: 2vw;
 }
