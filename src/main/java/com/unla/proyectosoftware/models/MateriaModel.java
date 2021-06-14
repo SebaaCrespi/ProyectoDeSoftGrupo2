@@ -55,5 +55,5 @@ public class MateriaModel {
     public void setProfesores(Set<ProfesorModel> profesores) {
         this.profesores = profesores;
     }
-    
+
 }

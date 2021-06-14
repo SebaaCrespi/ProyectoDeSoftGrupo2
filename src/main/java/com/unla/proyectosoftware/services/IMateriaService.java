@@ -13,4 +13,6 @@ public interface IMateriaService {
     public List<MateriaModel> findAllWithIdCarrera(int idCarrera);
 
     public MateriaModel insertOrUpdate(MateriaModel materia);
+
+    public List<MateriaModel> traerPorProfesor(int idUsuario);
 }

@@ -5,137 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <!-- importo Boxicons para los iconos -->
+    <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <!-- importo el css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
 </head>
-
 <body>
     <header class="header" id="inicio">
-        <!-- inserto el menu -->
         <img src="img/hamburguesa.svg" alt="" class="hamburguesa">
         <nav class="menu-navegacion">
-            <a href="#inicio">Inicio</a>        
-            <a href="#universidades">Universidades</a>
-             <a href="#nosotros">Acerca de</a>
+            <a href="#inicio">inicio</a>
+            <a href="#servicio">Acerca de</a>
+            <a href="#portafolio">Carreras</a>
             <a th:href="@{/login}">Login</a>
         </nav>
-        <!-- pantalla de inicio -->
         <div class="contenedor head">
-        <h1 class="titulo">Library</h1>
-               <h2>Bienvenidos a nuestra biblioteca digital!!!</h2>
-         
+               <h1 class="titulo">Te ayudamos a estudiar</h1>
+            <p>Library busca compilar todo el material de estudio de tu carrera</p>
         </div>
     </header>
     <main>
-      
-        <section class="galery" id="universidades">
+  
+        <seccion class="service contenedor" id="servicio">
+        </seccion>
+        <section class="galery" id="portafolio">
             <div class="contenedor">
                 <h2 class="subtitulo">Universidades</h2>
-          
-                    <div th:each="universidad:${universidades}">
-                        <a th:href="@{/admin/modificar/universidad/}+${universidad.idUniversidad}">
+
+                <div class="busqueda">
+                    <form action="#" th:action="@{/universidad/buscar/}" method="POST">
+                        <input type="text" placeholder="Nombre de la universidad..." required="required" name="busqueda">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="contenedor-galeria">
+                    <div th:if="${universidades} != null" th:each="universidad:${universidades}">
+                        <a th:href="@{/universidad/}+${universidad.idUniversidad}">
                             <h3 th:text="${universidad.nombre}"></h3>
                             <img th:src="@{'/Universidades/'} + ${universidad.logo}" width="200px" height="200px">
                         </a>
-                    </div><br>
-    <div class="columna">      
-            	 <div class="service">
-            		  <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Lanús</a></h3>
-             		  </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Quilmes</a></h3>
                     </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Lomas de Zamora</h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Avellaneda</a></h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de La Matanza</a></h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Luján</h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Tecnológica Nacional</h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad de Buenos Aires</a></h3>
-                    </div>    
-                     <div class="service">
-            		  <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional Arturo Jauretche</a></h3>
-             		  </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Gral. Sarmiento</a></h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Gral. San Martín</h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional Raúl Scalabrini Ortiz </a></h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Moreno</a></h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional de Tres de Febrero</h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Provincial de Ezeiza </h3>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number2"><i class='bx bx-book'></i></span>Universidad Nacional José C. Paz</a></h3>
-                    </div>    
-                    
-                    
-                    
-                    
-                    
-                    
-                                                               
-                </div>  
-                
-    </div>                    		 
-        </section>
-        
-                
-    <section class="services contenedor" id="nosotros">
-            <h2 class="subtitulo">Acerca de</h2>
-            <div class="contenedor-servicio">
-                <img src="img/leer.jpg" alt="">
-                <div class="checklist-servicio">
-                    <div class="service">
-                        <h3 class="n-service"><span class="number"><i class='bx bx-check'></i></span>Universidades</h3>
-                        <p> En nuestra página podrás encontrar un listado con las distintas Universidades de Argentina, para que encuentres lo que estas buscando!.</p>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number"><i class='bx bx-check'></i></span>Materias</h3>
-                        <p> Podrás visualizar las distintas materias de cada una de las carreras.</p>
-                    </div>
-                    <div class="service">
-                        <h3 class="n-service"><span class="number"><i class='bx bx-check'></i></span>Archivos</h3>
-                        <p> Podrás encontrar en la sección de la materia que búsques todos los archivos para visualizar y descargar..</p>
+                    <div  th:if="${universidad} != null">
+                        <a th:href="@{/universidad/}+${universidad.idUniversidad}">
+                            <h3 th:text="${universidad.nombre}"></h3>
+                            <img th:src="@{'/Universidades/'} + ${universidad.logo}" width="200px" height="200px">
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>     
-           
-    </main>
-    
-      <footer>
-        <div class="contenedor-footer">
-            <h2 class="titulo-final">PROYECTO DE SOFTWARE</h2>
-        </div>
-        <h2 class="titulo-final">&copy; Grupo 02 | 2021</h2>
-    </footer> 
-    
+        </section>
+       
+    <script src="js/menu.js" ></script>
    
-    <!-- enlaso con el javascript -->
-    <script src="js/menu.js"></script>
-    <!-- este scrip hace funcionar a la "X" -->
     <script src="js/lightbox.js"></script>
 </body>
 </html>

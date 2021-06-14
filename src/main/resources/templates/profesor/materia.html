@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <h1>CONTENIDO DE LA MATERIA</h1>
+    <a th:href="@{/profesor/materia/agregarArchivo/}+${materia.idMateria}">Agregar archivo</a>
+    <a th:href="@{/profesor/materia/agregarVideo/}+${materia.idMateria}">Agregar video</a>
+    <div class="contenido">
+        <div th:each="contenido : ${contenidos}">
+            <a th:if="${contenido.archivo}" th:href="@{'/Contenido/'} + ${contenido.nombre}" th:text="${contenido.titulo}" target="_blank"></a>
+            <a th:if="!${contenido.archivo}" th:href="@{${contenido.nombre}}" th:text="${contenido.titulo}" target="_blank"></a>
+            <a th:href="@{/profesor/materia/eliminarContenido/}+${materia.idMateria}+@{/}+${contenido.idContenido}">Eliminar</a>
+        </div>
+    </div>
+</body>
+</html>

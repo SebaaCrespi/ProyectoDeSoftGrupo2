@@ -16,5 +16,6 @@ public interface ICarreraRepository extends JpaRepository<Carrera, Serializable>
 	@Query("select c from Carrera c inner join fetch c.universidad cu WHERE cu.idUniversidad  = (:idUniversidad)")
 	public List<Carrera> findByIdUniversidad(@Param ("idUniversidad") int idUniversidad);
 
-	public Carrera findByIdCarrera(int id);
+	@Query("select c from Carrera c inner join fetch c.universidad cu WHERE c.idCarrera  = (:idCarrera)")
+	public Carrera findByIdCarrera(@Param ("idCarrera") int idCarrera);
 }

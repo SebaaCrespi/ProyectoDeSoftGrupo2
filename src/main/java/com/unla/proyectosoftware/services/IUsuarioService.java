@@ -5,4 +5,6 @@ import com.unla.proyectosoftware.models.UsuarioModel;
 public interface IUsuarioService {
 
     public UsuarioModel traerUsuarioYPerfil(String username);
+    
+    public UsuarioModel insertOrUpdate(UsuarioModel usuarioModel);
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="https://kit.fontawesome.com/30f1706d96.js" crossorigin="anonymous"></script>
+    <link href="../static/css/style_login_registro.css" th:href="@{/css/style_login_registro.css}" rel="stylesheet">
+</head>
+<body>
+	
+	<form action="#" th:action="@{/login/guardar}" th:object="${usuario}" method="POST" class="formulario-registrate">
+        <h1>Registrate</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-male icon"></i>
+                <input type="text" placeholder="Username" th:field="*{username}" required="required">
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" placeholder="Correo Academico" th:field="*{mail}" required="required">
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" placeholder="Password" th:field="*{password}" required="required">
+            </div>
+            <input type="submit" value="Registrar" class="button">
+            <p>Al registrarte aceptas las condiciones de uso</p>
+            <p>Ya tienes una cuenta? <a class="link" th:href="@{/login}">Iniciar sesion</a></p>
+        </div>
+    </form>
+	
+	
+
+</body>
+</html>
+
