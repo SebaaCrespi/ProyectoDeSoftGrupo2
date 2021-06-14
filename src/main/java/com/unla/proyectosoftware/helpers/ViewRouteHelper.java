@@ -38,5 +38,8 @@ public class ViewRouteHelper {
 	
 	//REDIRECT
 	public static final String ADMIN_ROOT = "/admin";
+
+	//FILTROS
+	public static final String FILTRO_UNIVERSIDAD = "filtros/universidad";
 	
 }

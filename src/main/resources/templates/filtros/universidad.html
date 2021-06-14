@@ -1,0 +1,6 @@
+<div th:if="${universidad} != null"  class="item">
+    <img th:src="@{'/Universidades/'} + ${universidad.logo}" class="item-img" width="200px" height="200px">
+    <div class="item-text">
+        <a th:text="${universidad.nombre}" th:href="@{/universidad/} + ${universidad.idUniversidad} "></a>
+    </div>
+</div>

@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -61,7 +60,9 @@ public class HomeController {
   */
 	@GetMapping("/universidad/buscar")
 	public ModelAndView buscarUniversidad(@RequestParam (required = true) String busqueda) {
-		ModelAndView mV = new ModelAndView(ViewRouteHelper.HOME);
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		System.out.println(busqueda);
+		ModelAndView mV = new ModelAndView(ViewRouteHelper.FILTRO_UNIVERSIDAD);
         mV.addObject("universidad", universidadService.traerUniversidadPorNombre(busqueda));		
 		return mV;
 	}

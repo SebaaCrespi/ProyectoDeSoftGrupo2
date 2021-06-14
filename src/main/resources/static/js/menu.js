@@ -15,9 +15,13 @@ window.addEventListener('click', e=>{
     }
 })
 
-$.ajax({method: "GET",url:"/univerisdad/buscar/"})
+$('#botonBusqueda').on('click', () =>{
+    var busquedaData = $('#busquedaData').val();
+    $.ajax({method: "GET",url:"/universidad/buscar",data:{ busqueda: busquedaData}})
     .done((response)=>{
-
+        $('#contenedorUniv .univ').css("display","none");
+        $('#contenedorUniv').html(response);
+        console.log(response)
     })
     .fail(()=>{
 
@@ -25,3 +29,4 @@ $.ajax({method: "GET",url:"/univerisdad/buscar/"})
     .always(()=>{
 
     });
+});

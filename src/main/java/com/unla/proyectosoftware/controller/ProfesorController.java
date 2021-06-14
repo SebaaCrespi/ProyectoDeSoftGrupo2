@@ -49,24 +49,26 @@ public class ProfesorController {
         return mV;
     }
 
-    @GetMapping("/materia/{idMateria}")
-    public ModelAndView materia(@PathVariable ("idMateria") int idMateria){
+    @GetMapping("/{idUsuario}/materia/{idMateria}")
+    public ModelAndView materia(@PathVariable ("idMateria") int idMateria,@PathVariable ("idUsuario") int idUsuario){
         ModelAndView mV = new ModelAndView(ViewRouteHelper.PROFESOR_MATERIA);
         mV.addObject("materia", materiaService.traerPorId(idMateria));
         mV.addObject("contenidos", contenidoService.traerPorIdMateria(idMateria));
+        mV.addObject("idProfesor", idUsuario);
         return mV;
     }
 
-    @GetMapping("/materia/agregarArchivo/{idMateria}")
-    public ModelAndView agregarArchivo(@PathVariable ("idMateria") int idMateria){
+    @GetMapping("/{idProfesor}/materia/{idMateria}/agregarArchivo")
+    public ModelAndView agregarArchivo(@PathVariable ("idMateria") int idMateria,@PathVariable ("idProfesor") int idProfesor){
         ModelAndView mV = new ModelAndView(ViewRouteHelper.PROFESOR_AGREGAR_ARCHIVO);
         mV.addObject("contenido", new ContenidoModel());
         mV.addObject("idMateria", idMateria);
+        mV.addObject("idProfesor", idProfesor);
         return mV;
     }
 
-    @PostMapping("/materia/agregarArchivo/guardar/{idMateria}")
-    public RedirectView guardarArchivo(@ModelAttribute("contenido") ContenidoModel contenido, @RequestParam("file") MultipartFile file,@PathVariable ("idMateria") int idMateria){
+    @PostMapping("/{idProfesor}/materia/{idMateria}/agregarArchivo/guardar")
+    public RedirectView guardarArchivo(@ModelAttribute("contenido") ContenidoModel contenido, @RequestParam("file") MultipartFile file,@PathVariable ("idMateria") int idMateria,@PathVariable ("idProfesor") int idProfesor){
         if(!file.isEmpty()){
             String routeImg = "C://Contenido";
             try{
@@ -81,29 +83,30 @@ public class ProfesorController {
         contenido.setMateriaModel(materiaService.traerPorId(idMateria));
         contenido.setArchivo(true);
         contenidoService.insertOrUpdate(contenido);
-        return new RedirectView("/profesor/materia/"+idMateria);
+        return new RedirectView("/profesor/"+idProfesor+"/materia/"+idMateria);
     }
 
-    @GetMapping("/materia/agregarVideo/{idMateria}")
-    public ModelAndView agregarVideo(@PathVariable ("idMateria") int idMateria){
+    @GetMapping("{idProfesor}/materia/{idMateria}/agregarVideo")
+    public ModelAndView agregarVideo(@PathVariable ("idMateria") int idMateria,@PathVariable ("idProfesor") int idProfesor){
         ModelAndView mV = new ModelAndView(ViewRouteHelper.PROFESOR_AGREGAR_VIDEO);
         mV.addObject("contenido", new ContenidoModel());
         mV.addObject("idMateria", idMateria);
+        mV.addObject("idProfesor", idProfesor);
         return mV;
     }
 
-    @PostMapping("/materia/agregarVideo/guardar/{idMateria}")
-    public RedirectView guardarVideo(@ModelAttribute("contenido") ContenidoModel contenido,@PathVariable ("idMateria") int idMateria){
+    @PostMapping("{idProfesor}/materia/{idMateria}/agregarVideo/guardar")
+    public RedirectView guardarVideo(@ModelAttribute("contenido") ContenidoModel contenido,@PathVariable ("idMateria") int idMateria,@PathVariable ("idProfesor") int idProfesor){
         contenido.setMateriaModel(materiaService.traerPorId(idMateria));
         contenido.setArchivo(false);
         contenidoService.insertOrUpdate(contenido);
-        return new RedirectView("/profesor/materia/"+idMateria);
+        return new RedirectView("/profesor/"+idProfesor+"/materia/"+idMateria);
     }
 
-    @GetMapping("/materia/eliminarContenido/{idMateria}/{idContenido}")
-    public RedirectView eliminarContenido(@PathVariable ("idContenido") int idContenido,@PathVariable ("idMateria") int idMateria){
+    @GetMapping("{idProfesor}/materia/{idMateria}/eliminarContenido/{idContenido}")
+    public RedirectView eliminarContenido(@PathVariable ("idContenido") int idContenido,@PathVariable ("idMateria") int idMateria,@PathVariable ("idProfesor") int idProfesor){
         contenidoService.remove(idContenido);
-        return new RedirectView("/profesor/materia/"+idMateria);
+        return new RedirectView("/profesor/"+idProfesor+"/materia/"+idMateria);
     }
 
 }

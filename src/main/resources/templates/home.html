@@ -8,7 +8,8 @@
     <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link href="../static/css/admin/style_universidad.css" th:href="@{/css/admin/style_universidad.css}" rel="stylesheet">
 </head>
 <body>
     <header class="header" id="inicio">
@@ -16,7 +17,6 @@
         <nav class="menu-navegacion">
             <a href="#inicio">inicio</a>
             <a href="#servicio">Acerca de</a>
-            <a href="#portafolio">Carreras</a>
             <a th:href="@{/login}">Login</a>
         </nav>
         <div class="contenedor head">
@@ -33,24 +33,24 @@
                 <h2 class="subtitulo">Universidades</h2>
 
                 <div class="busqueda">
-                    <form action="#" th:action="@{/universidad/buscar/}" method="POST">
-                        <input type="text" placeholder="Nombre de la universidad..." required="required" name="busqueda">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                        <input id="busquedaData" type="text" placeholder="Nombre de la universidad..." required="required" name="busqueda">
+                        <button id="botonBusqueda"><i class="fas fa-search"></i></button>
                 </div>
-                <div class="contenedor-galeria">
-                    <div th:if="${universidades} != null" th:each="universidad:${universidades}">
-                        <a th:href="@{/universidad/}+${universidad.idUniversidad}">
-                            <h3 th:text="${universidad.nombre}"></h3>
-                            <img th:src="@{'/Universidades/'} + ${universidad.logo}" width="200px" height="200px">
-                        </a>
+                <div class="contenedor-galeria" id="contenedorUniv">
+                    <div th:if="${universidades} != null" th:each="universidad:${universidades}" class="item univ">
+                        <img th:src="@{'/Universidades/'} + ${universidad.logo}" class="item-img" width="200px" height="200px">
+                        <div class="item-text">
+                            <a th:text="${universidad.nombre}" th:href="@{/universidad/} + ${universidad.idUniversidad} "></a>
+                        </div>
                     </div>
+                    
+                    <!--
                     <div  th:if="${universidad} != null">
                         <a th:href="@{/universidad/}+${universidad.idUniversidad}">
                             <h3 th:text="${universidad.nombre}"></h3>
                             <img th:src="@{'/Universidades/'} + ${universidad.logo}" width="200px" height="200px">
                         </a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </section>

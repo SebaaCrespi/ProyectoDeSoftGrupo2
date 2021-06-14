@@ -2,11 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color:#1a2537;
 }
 
 body{
     background-color: #eee;
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 .container{
@@ -19,6 +21,11 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+}
+.container a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
 }
 
 .titulo{

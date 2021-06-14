@@ -5,25 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d25b889486.js" crossorigin="anonymous"></script>
+    <link href="../static/css/contenido.css" th:href="@{/css/contenido.css}" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
-    <div class="container">
-        <div class="backButton">
-            <a th:href="@{/universidad/}+${idUniversidad}+@{/carrera/}+${idCarrera}"><i class="fas fa-arrow-left"></i></a>
-        </div>
-        <div class="container">
-            <div>
-                <h2 th:text="${materia.nombre}"></h2>
-            </div>
-        <div class="listado">
+        <a th:href="@{/universidad/}+${idUniversidad}+@{/carrera/}+${idCarrera}"><i class="fas fa-arrow-left"></i></a>
+        <h1 th:text="${materia.nombre}"></h1>
+        <div class="contenido">
             <div th:each="contenido : ${contenidos}">
-                <a th:if="${contenido.archivo}" th:href="@{'/Contenido/'} + ${contenido.nombre}" th:text="${contenido.titulo}" target="_blank"></a>
-                <a th:if="!${contenido.archivo}" th:href="@{${contenido.nombre}}" th:text="${contenido.titulo}" target="_blank"></a>
+                <div class="contenidoItem">
+                    <a th:if="${contenido.archivo}" th:href="@{'/Contenido/'} + ${contenido.nombre}" th:text="${contenido.titulo}" target="_blank"></a>
+                    <a th:if="!${contenido.archivo}" th:href="@{${contenido.nombre}}" th:text="${contenido.titulo}" target="_blank"></a>
+                </div>
             </div>
         </div>
-    </div>
-      
-    </div>
 </body>
 </html>

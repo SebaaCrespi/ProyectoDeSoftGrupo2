@@ -15,9 +15,10 @@
         <h1 th:text="${materia.nombre}"></h1>
         <div class="contenedor">
             <select name="profesor" id="">
-                <option th:each="profesor : ${profesoresList}" th:text="*{profesor.nombre} + *{profesor.apellido}" th:value="${profesor.idUsuario}" ></option>
+                <option th:each="profesor : ${profesoresList}" th:text="*{profesor.apellido} +' '+ *{profesor.nombre}" th:value="${profesor.idUsuario}" ></option>
             </select>
             <input type="submit" value="Agregar Profesor" class="button">
+            <a class="button" th:href="@{/admin/alta/profesor/}+${materia.idMateria}">Registrar Profesor</a>
         </div>
     </form>
 </body>

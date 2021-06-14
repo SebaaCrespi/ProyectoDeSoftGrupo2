@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <a th:href="@{/admin}"><i class="fas fa-arrow-left"></i></a>
+    <a th:href="@{/admin/materia/agregarProfesor/}+${idMateria}"><i class="fas fa-arrow-left"></i></a>
     
     <form action="#" th:action="@{/admin/guardar/profesor}" th:object="${profesor}" 
     		method="POST" class="formulario-login">
@@ -20,26 +20,18 @@
         
         <div class="contenedor">
             <div class="input-contenedor">
-                <!-- <img src="../static/images/pirate.jpg" width="1000" th:src="@{images/pirate.jpg}"/>logo de mail -->
-                <img src="../static/image/imagenes/user-solid-24.png" th:src="@{image/user-solid-24.png}" 
-                	alt="" srcset="" class="imagen">
                 <input type="text" th:field="*{nombre}" placeholder="Nombre" >
             </div>
             <div class="input-contenedor">
-                <img src="../static/image/imagenes/user-solid-24.png" th:src="@{image/user-solid-24.png}" 
-                	 alt="" srcset="" class="imagen">
                 <input type="text" th:field="*{apellido}" placeholder="Apellido Docente">
             </div>
             <div class="input-contenedor">
-                <img src="imagenes/mail-send-regular-24.png" alt="" srcset="" class="imagen">
                 <input type="email" th:field="*{mail}" placeholder="Email Docente">
             </div>
             <div class="input-contenedor">
-                <img src="imagenes/user-solid-24.png" alt="" srcset="" class="imagen">
                 <input type="text" th:field="*{username}" placeholder="Nombre Usuario">
             </div>
             <div class="input-contenedor">
-                <img src="imagenes/key-solid-24.png" alt="" srcset="" class="imagen">
                 <input type="password" th:field="*{password}"  placeholder="password">
             </div>
             <div>
